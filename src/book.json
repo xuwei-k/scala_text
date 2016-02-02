@@ -9,5 +9,8 @@
     "japanese-support",
     "footnote-string-to-number"
   ],
+  "variables": {
+    "scala_version": "2.11.7"
+  },
   "title": "Scala研修テキスト"
 }
