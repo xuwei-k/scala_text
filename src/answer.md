@@ -9,7 +9,11 @@
 def sum(list: List[Int]): Int
 ```
 
-## 解答
+
+<button type="button" onclick="document.getElementById('answer_1').nextSibling.nextSibling.style.visibility='visible';">答えを表示する</button>
+<button type="button" onclick="document.getElementById('answer_1').nextSibling.nextSibling.style.visibility='hidden';">答えを隠す</button>
+
+## 解答 {#answer_1}
 
 ```tut:silent
 def sum(list: List[Int]): Int = list match {
