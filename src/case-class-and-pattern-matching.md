@@ -228,32 +228,30 @@ object BinaryTree {
   case object Empty extends Tree
 
   def max(t: Tree): Int = t match {
-    case Branch(v1, Branch(v2, Empty, Empty), Branch(v3, Empty, Empty)) =>
-      val m = if(v1 <= v2) v2 else v1
-      if(m <= v3) v3 else m
-    case Branch(v1, Branch(v2, Empty, Empty), Empty) => if(v1 <= v2) v2 else v1
-    case Branch(v1, Empty, Branch(v2, Empty, Empty)) => if(v1 <= v2) v2 else v1
-    case Branch(v, l, r) => 
-      val m1 = max(l)
-      val m2 = max(r)
-      val m3 = if(m1 <= m2) m2 else m1
-      if(v <= m3) m3 else v
-    case Empty => throw new RuntimeException
+    case Branch(v, Empty, Empty) =>
+      v
+    case Branch(v, Empty, r) =>
+      math.max(v, max(r))
+    case Branch(v, l, Empty) =>
+      math.max(v, max(l))
+    case Branch(v, l, r) =>
+      List(v, max(l), max(r)).max
+    case Empty =>
+      throw new RuntimeException
   }
 
 
   def min(t: Tree): Int = t match {
-    case Branch(v1, Branch(v2, Empty, Empty), Branch(v3, Empty, Empty)) =>
-      val m = if(v1 >= v2) v2 else v1
-      if(m >= v3) v3 else m
-    case Branch(v1, Branch(v2, Empty, Empty), Empty) => if(v1 >= v2) v2 else v1
-    case Branch(v1, Empty, Branch(v2, Empty, Empty)) => if(v1 >= v2) v2 else v1
+    case Branch(v, Empty, Empty) =>
+      v
+    case Branch(v, Empty, r) =>
+      math.min(v, min(r))
+    case Branch(v, l, Empty) =>
+      math.min(v, min(l))
     case Branch(v, l, r) => 
-      val m1 = min(l)
-      val m2 = min(r)
-      val m3 = if(m1 > m2) m2 else m1
-      if(v >= m3) m3 else v
-    case Empty => throw new RuntimeException
+      List(v, min(l), min(r)).min
+    case Empty =>
+      throw new RuntimeException
   }
 
   def depth(t: Tree): Int = t match {
