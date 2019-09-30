@@ -5,7 +5,7 @@ val textTestAll = taskKey[Unit]("test scala, links")
 
 name := "textbook"
 
-scalaVersion := "2.12.8"
+scalaVersion := "2.13.1"
 
 enablePlugins(TutPlugin)
 
@@ -14,7 +14,8 @@ tutSourceDirectory := srcDir
 tutTargetDirectory := compiledSrcDir
 
 libraryDependencies ++= Seq(
-  "org.scala-sbt" % "sbt" % sbtVersion.value,
+  // TODO Scala 2.13 でビルドされたsbtがpublishされたら再度有効化
+  // "org.scala-sbt" % "sbt" % sbtVersion.value,
   "org.mockito" % "mockito-core" % "3.0.0",
   "org.scalacheck" %% "scalacheck" % "1.14.2",
   "org.scalatest" %% "scalatest" % "3.0.8" // tutで使うので、テストライブラリだが、わざとcompileスコープ

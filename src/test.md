@@ -124,29 +124,30 @@ BDDでは、テスト内にそのプログラムに与えられた機能的な�
 
 `build.sbt`を用意して、以下を記述しておきます。
 
+<!--
 ```tut:invisible
 import sbt._, Keys._
 ```
+-->
 
-```tut:silent
+```scala
 name := "scalatest_study"
 
 version := "1.0"
 
-scalaVersion := "2.12.8"
+scalaVersion := "2.13.1"
 
-libraryDependencies += "org.scalatest" %% "scalatest" % "3.0.7" % "test"
-
+libraryDependencies += "org.scalatest" %% "scalatest" % "3.0.8" % "test"
 ```
 
 その後、`scalatest_study`フォルダ内で、`sbt compile`を実行してみましょう。
 
 ```
-[info] Set current project to scalatest_study (in build file:/Users/dwango/workspace/scalatest_study/scalatest_study/)
-[info] Updating {file:/Users/dwango/workspace/scalatest_study/scalatest_study/}scalatest_study...
-[info] Resolving jline#jline;2.12.1 ...
-[info] downloading https://repo1.maven.org/maven2/org/scalatest/scalatest_2.12/3.0.7/scalatest_2.12-3.0.7.jar ...
-[info] 	[SUCCESSFUL ] org.scalatest#scalatest_2.12;3.0.7!scalatest_2.12.jar(bundle) (10199ms)
+[info] Set current project to scalatest_study (in build file:/Users/user/workspace/scalatest_study/scalatest_study/)
+[info] Updating {file:/Users/user/workspace/scalatest_study/scalatest_study/}scalatest_study...
+[info] Resolving jline#jline;2.13.1 ...
+[info] downloading https://repo1.maven.org/maven2/org/scalatest/scalatest_2.13/3.0.8/scalatest_2.13-3.0.8.jar ...
+[info] 	[SUCCESSFUL ] org.scalatest#scalatest_2.13;3.0.8!scalatest_2.13.jar(bundle) (10199ms)
 [info] Done updating.
 [success] Total time: 11 s, completed 2015/04/09 16:48:42
 ```
@@ -249,7 +250,7 @@ class CalcSpec extends FlatSpec with DiagrammedAssertions {
 以下のような実行結果が表示されます。
 
 ```
-[info] Loading project definition from /Users/dwango/workspace/scalatest_study/project
+[info] Loading project definition from /Users/user/workspace/scalatest_study/project
 [info] Set current project to scalatest_study (in build file:/Users/dwango/workspace/scalatest_study/)
 [info] Compiling 1 Scala source to /Users/dwango/workspace/scalatest_study/target/scala-2.12/classes...
 [info] Compiling 1 Scala source to /Users/dwango/workspace/scalatest_study/target/scala-2.12/test-classes...
@@ -398,7 +399,7 @@ BDDでテストを書くことによってテストによってどのような�
 ここでは、よく使われているMockitoを利用してみましょう。
 `build.sbt`に以下を追記することで利用可能になります。
 
-```tut:silent
+```scala
 libraryDependencies += "org.mockito" % "mockito-core" % "2.13.0" % "test"
 ```
 
