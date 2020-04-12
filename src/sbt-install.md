@@ -1,6 +1,6 @@
 # sbtをインストールする
 
-```scala mdoc:nest:invisible
+```scala
 import sbt._, Keys._
 ```
 
@@ -10,7 +10,7 @@ import sbt._, Keys._
 
 ## Javaのインストール
 
-Scala 2.12ではJava 8以降が必須なので、もしJavaがインストールされていなければ、まずJavaをインストールしましょう。
+Scala 2.12や2.13ではJava 8以降が必須なので、もしJavaがインストールされていなければ、まずJavaをインストールしましょう。
 Javaのインストール方法の詳細はここでは省略します。
 ScalaとJavaのそれぞれのバージョンの互換性に関しては、以下のScala公式サイトのページを見てください。
 
@@ -65,7 +65,7 @@ $ sbt console
 [info] Done updating.
 [info] Starting scala interpreter...
 [info] 
-Welcome to Scala version 2.12.8 (Java HotSpot(TM) 64-Bit Server VM, Java 1.8.0_45).
+Welcome to Scala version 2.13.1 (Java HotSpot(TM) 64-Bit Server VM, Java 1.8.0_45).
 Type in expressions to have them evaluated.
 Type :help for more information.
 
@@ -87,8 +87,8 @@ scala> :quit
 になってしまうので、こちらが指定したバージョンのScalaでREPLを起動したい場合は、同じディレクトリに
 _build.sbt_というファイルを作成し、
 
-```scala mdoc:nest:silent
-scalaVersion := "2.12.8"
+```scala
+scalaVersion := "2.13.1"
 ```
 
 としてやると良いです。この_*.sbt_がsbtのビルド定義ファイルになるのですが、今はREPLに慣れてもらう
