@@ -22,7 +22,7 @@
 プロジェクトに携わる際は、どういった定義でテストを分類しているか確認しておきましょう。
 参考までに、いくつかの分類例を示します。
 
-- [実践テスト駆動開発](http://www.shoeisha.co.jp/book/detail/9784798124582)での定義
+- [実践テスト駆動開発](https://www.shoeisha.co.jp/book/detail/9784798124582)での定義
   - ユニットテスト
     - オブジェクトは正しく振る舞っているか、またオブジェクトが扱いやすいかどうかをテストします。
   - インテグレーションテスト
@@ -104,7 +104,7 @@
 Scalaで広く利用されているテスティングフレームワークとして紹介されるのは以下の2つです。
 
 - [Specs2](https://etorreborre.github.io/specs2/)
-- [ScalaTest](http://www.scalatest.org/)
+- [ScalaTest](https://www.scalatest.org/)
 
 今回は、マクロを用いて実装されているpower assertという便利な機能を使いたいため、ScalaTestを利用します[^power-assert]。
 
@@ -389,9 +389,9 @@ BDDでテストを書くことによってテストによってどのような�
 モックとは、テストをする際に必要となるオブジェクトを偽装して用意できる機能です。
 以下の様なモックライブラリが存在しています。
 
-- [ScalaMock](http://scalamock.org/)
-- [EasyMock](http://easymock.org/)
-- [JMock](http://jmock.org/)
+- [ScalaMock](https://scalamock.org/)
+- [EasyMock](https://easymock.org/)
+- [JMock](https://jmock.org/)
 - [Mockito](https://github.com/mockito/mockito)
 
 ここでは、よく使われているMockitoを利用してみましょう。
@@ -439,7 +439,7 @@ class CalcSpec extends AnyFlatSpec with Diagrams with TimeLimits {
 
 **scoverageは現在最新のScalaで動かない問題があります<https://github.com/scala-text/scala_text/issues/553>。**
 
-過去、[SCCT](http://mtkopone.github.io/scct/)というプロダクトがあったのですが紆余曲折あり、
+過去、[SCCT](https://mtkopone.github.io/scct/)というプロダクトがあったのですが紆余曲折あり、
 今はあまりメンテンナンスされていません。
 
 `project/plugins.sbt` に以下のコードを記述します。
@@ -474,7 +474,7 @@ addSbtPlugin("org.scoverage" % "sbt-scoverage" % "1.5.1")
 リグレッションを検出するためにつかわれます。
 その際に、CIの一環として一緒に行われることが多いのがコードスタイルチェックです。
 
-ここでは、[ScalaStyle](http://www.scalastyle.org/sbt.html)を利用します。
+ここでは、[ScalaStyle](https://www.scalastyle.org/sbt.html)を利用します。
 
 使い方は、`project/plugins.sbt` に以下のコードを記述します。
 
@@ -522,7 +522,7 @@ addSbtPlugin("org.scalastyle" %% "scalastyle-sbt-plugin" % "1.0.0")
 そんな作業を、限られたリソースですべてのパッチに対して行うのは不可能に近いので、プロジェクトによってはテストコードのないパッチはレビュー対象から外すことが多いです。
 パッチを送る場合は相手側が自信を持ってパッチを取り込めるよう、テストを含めておきましょう。
 
-[^jstqb]: http://www.jstqb.jp/dl/JSTQB-glossary.V2.3.J02.pdf
+[^jstqb]: https://www.jstqb.jp/dl/JSTQB-glossary.V2.3.J02.pdf
 [^power-assert]: 渡された条件式の実行過程をダイアグラムで表示する`assert`は、一般に“power assert”と呼ばれています
 [^predef-assert]: Scalaには`Predef`にも`assert`が存在しますが、基本的に使うことはありません
-[^xutp]: モック以外の仕組みについては[xUnit Test Patterns](http://xunitpatterns.com/)を参照してください
+[^xutp]: モック以外の仕組みについては[xUnit Test Patterns](https://xunitpatterns.com/)を参照してください

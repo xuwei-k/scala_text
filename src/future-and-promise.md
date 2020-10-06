@@ -414,7 +414,7 @@ Promiseの配列のそれぞれに成功結果を定義しています。
 ちなみに、このような複雑なイベント処理は既にJavaの[concurrentパッケージ](https://docs.oracle.com/javase/jp/8/docs/api/java/util/concurrent/package-summary.html)に
 いくつか実装があるので実際の利用ではそれらを用いることもできます。
 またもっと複雑なイベントの時間毎の絞込みや合成、分岐などをする際には
-[RxScala](http://reactivex.io/rxscala/)というイベントストリームを専門に
+[RxScala](https://reactivex.io/rxscala/)というイベントストリームを専門に
 取り扱うライブラリを利用することができます。
 このRxは元々はC#で生まれたReactive Extensionsというライブラリで、
 現在では[様々な言語にポーティング](https://github.com/ReactiveX)が行われています。
