@@ -7,9 +7,9 @@ ThisBuild / onChangedBuildSource := ReloadOnSourceChanges
 
 name := "textbook"
 
-scalaVersion := "2.13.10"
+scalaVersion := "3.2.2"
 
-crossScalaVersions += "3.2.2"
+crossScalaVersions += "2.13.10"
 
 enablePlugins(MdocPlugin)
 
@@ -19,9 +19,11 @@ mdocOut := compiledSrcDir
 
 cleanFiles += compiledSrcDir
 
+// sbt 2のalpha版で不整合があるため。それがなくなったらこの設定削除
+evictionErrorLevel := Level.Warn
+
 libraryDependencies ++= Seq(
-  // TODO sbtがScala 2.13対応したら再び有効化
-  // "org.scala-sbt" % "sbt" % sbtVersion.value,
+  "org.scala-sbt" % "main" % "2.0.0-alpha7" cross CrossVersion.for2_13Use3 exclude ("org.scala-lang.modules", "scala-xml_3"),
   "org.mockito" % "mockito-core" % "5.2.0",
   "org.scalacheck" %% "scalacheck" % "1.17.0",
   "org.scalatest" %% "scalatest-flatspec" % "3.2.15", // mdocで使うので、テストライブラリだが、わざとcompileスコープ

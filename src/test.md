@@ -1,5 +1,9 @@
 # テスト
 
+```scala mdoc:nest:invisible
+import sbt._, Keys._
+```
+
 ソフトウェアをテストすることは多くの開発者が必要なことだと認識していますが、テストという言葉の定義は各人で異なり話が噛み合わない、という状況が多々発生します。
 このような状況に陥る原因の多くは人や組織、開発するソフトウェアによってコンテキストが異なるにもかかわらず、言葉の定義について合意形成せずに話し始めるためです。
 
@@ -124,7 +128,7 @@ BDDでは、テスト内にそのプログラムに与えられた機能的な�
 
 `build.sbt`を用意して、以下を記述しておきます。
 
-```scala
+```scala mdoc:nest:silent
 name := "scalatest_study"
 
 version := "1.0"
@@ -401,7 +405,7 @@ BDDでテストを書くことによってテストによってどのような�
 ここでは、よく使われているMockitoを利用してみましょう。
 `build.sbt`に以下を追記することで利用可能になります。
 
-```scala
+```scala mdoc:nest:silent
 libraryDependencies += "org.mockito" % "mockito-core" % "5.2.0" % "test"
 ```
 
@@ -445,7 +449,7 @@ class CalcSpec extends AnyFlatSpec with Diagrams with TimeLimits {
 
 `project/plugins.sbt` に以下のコードを記述します。
 
-```scala
+```scala mdoc:nest:silent
 addSbtPlugin("org.scoverage" % "sbt-scoverage" % "2.0.3")
 ```
 
@@ -491,7 +495,7 @@ scalafmt、scalafixはCLIでもsbt pluginでも使えますがここではsbt pl
 
 `project/plugins.sbt` に以下のコードを記述します。
 
-```scala
+```scala mdoc:nest:silent
 addSbtPlugin("org.scalameta" %% "scalafmt" % "<latest>")
 addSbtPlugin("ch.epfl.scala" % "sbt-scalafix" % "<latest>")
 ```
