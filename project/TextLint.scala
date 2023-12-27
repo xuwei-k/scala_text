@@ -1,4 +1,4 @@
-import sbt._
+import sbt.*
 
 import scala.util.control.NonFatal
 import scala.sys.process.Process

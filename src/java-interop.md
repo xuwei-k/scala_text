@@ -13,10 +13,10 @@ Javaのライブラリをimportするためには、Scalaでほとんど同様�
 import java.util.*;
 import java.util.ArrayList;
 ```
-ワイルドカードインポートはScala 2では`_`を、Scala 3では`*`を使います。
+ワイルドカードインポートは古いScala 2では`_`を、最新のScala 2や3では`*`を使います。
 
 ```scala mdoc:nest:silent
-import java.util._
+import java.util.*
 import java.util.ArrayList
 ```
 
@@ -243,14 +243,14 @@ Scala 2.12以前は同様の機能は`scala.collection.JavaConverters`で提供�
 使い方はいたって簡単で、
 
 ```scala mdoc:nest:silent
-import scala.jdk.CollectionConverters._
+import scala.jdk.CollectionConverters.*
 ```
 
 とするだけです。これで、JavaとScalaのコレクションのそれぞれにasJava()やasScala()といったメソッドが追加されるのでそのメソッドを以下のように
 呼び出せば良いです。
 
 ```scala mdoc:nest
-import scala.jdk.CollectionConverters._
+import scala.jdk.CollectionConverters.*
 import java.util.ArrayList
 
 val list = new ArrayList[String]()
@@ -275,7 +275,7 @@ BufferはScalaの変更可能なリストのスーパークラスですが、と
 
 ```scala mdoc:nest
 import scala.collection.mutable.ArrayBuffer
-import scala.jdk.CollectionConverters._
+import scala.jdk.CollectionConverters.*
 val buffer = new ArrayBuffer[String]
 buffer += "A"
 buffer += "B"

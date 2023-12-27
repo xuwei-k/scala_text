@@ -1,6 +1,6 @@
 package domain
 
-import scalikejdbc._
+import scalikejdbc.*
 
 trait UserRepository {
   def insert(user: User): User

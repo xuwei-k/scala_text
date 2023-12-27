@@ -97,8 +97,8 @@ object FromInts {
 `Num` と `FromInt` を使うと、 `average` 関数は次のように書くことができます。
 
 ```scala mdoc:nest
-import Nums._
-import FromInts._
+import Nums.*
+import FromInts.*
 def average[A](lst: List[A])(implicit a: Num[A], b: FromInt[A]): A = {
   val length: Int = lst.length
   val sum: A  = lst.foldLeft(a.zero)((x, y) => a.plus(x, y))
@@ -120,8 +120,8 @@ average(List(1.5, 2.5, 3.5))
 上記のコードは、context boundsというシンタックスシュガーを使うことで、次のように書き換えることもできます。
 
 ```scala mdoc:nest
-import Nums._
-import FromInts._
+import Nums.*
+import FromInts.*
 def average[A:Num:FromInt](lst: List[A]): A = {
   val a = implicitly[Num[A]]
   val b = implicitly[FromInt[A]]
@@ -172,8 +172,8 @@ def min[B >: A](implicit cmp: Ordering[B]): A
 が見やすいようにしています。
 
 ```scala mdoc:nest
-import Nums._
-import FromInts._
+import Nums.*
+import FromInts.*
 def median[A:Num:Ordering:FromInt](lst: List[A]): A = {
   val num = implicitly[Num[A]]
   val ord = implicitly[Ordering[A]]
@@ -333,7 +333,7 @@ object Serializers {
     }
   }
 }
-import Serializers._
+import Serializers.*
 string(List(1, 2, 3)) // [1,2,3]
 string(List(List(1),List(2),List(3))) // [[1],[2],[3]]
 string(1) // 1

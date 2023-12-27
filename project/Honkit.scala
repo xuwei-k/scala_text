@@ -1,6 +1,6 @@
-import sbt._
+import sbt.*
 import sbt.io.IO
-import mdoc.MdocPlugin.autoImport._
+import mdoc.MdocPlugin.autoImport.*
 import scala.sys.process.Process
 
 object Honkit extends NpmCliBase {

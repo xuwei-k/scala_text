@@ -108,7 +108,7 @@ object Taps {
 ```
 
 ```scala mdoc:nest
-import Taps._
+import Taps.*
 Taps.main(Array())
 ```
 

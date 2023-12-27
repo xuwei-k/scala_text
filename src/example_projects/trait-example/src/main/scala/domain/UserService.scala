@@ -1,7 +1,7 @@
 package domain
 
 import org.mindrot.jbcrypt.BCrypt
-import scalikejdbc._
+import scalikejdbc.*
 
 class UserService {
   val maxNameLength = 32

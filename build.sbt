@@ -1,4 +1,4 @@
-import NpmCliBase._
+import NpmCliBase.*
 
 val textLintAll = taskKey[Unit]("lint text, html")
 val textTestAll = taskKey[Unit]("test scala, links")

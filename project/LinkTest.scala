@@ -1,4 +1,4 @@
-import sbt._
+import sbt.*
 import scala.sys.process.Process
 
 object LinkTest extends NpmCliBase {
